@@ -1,181 +1,217 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    </head>
-    <script src="https://kit.fontawesome.com/c425e24a8.js" crossorigin="anonymous"></script>
-    <body>
-        <div id="header">
-            <div class="container">
-                <div class="top-info">I'm a Web Developer & Data Analyst — Available for freelance. <a href="#contact" class="cta">Hire me</a></div>
-                <nav>
-                    <h1 class="brand"><span>G</span>yan</h1>
-                    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light and dark mode">
-                        <i class="fas fa-moon"></i>
-                        <span class="sr-only">Toggle theme</span>
-                    </button>
-                    <button class="nav-toggle" aria-label="Toggle menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul class="nav-links">
-                        <li><a href="#header">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Service</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="header-text">
-                    <h1>Hi, <br>I'm <span>Gyan kaur</span></h1>
-                    <p class="lead">I build responsive websites and analyze data to deliver actionable insights.</p>
-                    <a href="#contact" class="btn cta-btn">Get in touch</a>
-                </div>
-            </div>
-        </div>
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-1">
-                        <img src="img/0.jpg" alt="Portrait of Gyan">
-                    </div>
-                    <div class="col-2">
-                        <h1 class="sub-title">About me</h1>
-                        <p>I am a passionate and detail-oriented aspiring Web Developer 
-                            and Data Analyst with a strong foundation in HTML, CSS, JavaScript, Python, React,
-                             and data visualization tools. I enjoy building responsive, user-friendly applications and 
-                            transforming data into meaningful insights.</p>
-                        <div class="titles">
-                            <p class="links active-link" onclick="opentab('skills', this)">Skills</p>
-                            <p class="links" onclick="opentab('education', this)">Education</p>
-                        </div>
-                        <div class="content active-tab" id="skills">
-                            <ul>
-                                <li><span>Web Development</span><br>HTML, CSS, JavaScript, React </li>
-                                <li><span>Data Analysis</span><br>Python, Pandas, NumPy, Matplotlib</li>
-                            </ul>
-                        </div>
-                        <div class="content" id="education">
-                            <ul>
-                                <li><span>Bachelor</span><br>BCA(AI)</li>
-                                <li><span>12th (Commerce)</span><br>Senior Secondary — Commerce stream</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="services">
-            <div class="container">
-                <h1 class="sub-title">My Services </h1>
-                <div class="services-list">
-                    <div>
-                        <i class="fas fa-code"></i>
-                        <h2>Web Designing</h2>
-                        <p>Website Design & Development
-                        , Responsive and modern websites using HTML, CSS, and JavaScript
-                        , Mobile-friendly layouts with Flexbox and Grid
-                        , Clean, user-focused UI design</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <div>
-                        <i class="fas fa-crop-alt"></i>
-                        <h2>UI/UX Design</h2>
-                        <p>Clean, modern, and visually appealing interface designs
-                        , Responsive layouts for desktop, tablet, and mobile devices
-                        , Consistent color schemes, typography, and design systems
-                        , Dark mode and accessibility-friendly designs</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <div>
-                        <i class="fas fa-app-store"></i>
-                        <h2>App Design</h2>
-                        <p>Front-End App Development
-                        , User-friendly and responsive app interfaces
-                        , Clean layouts focused on usability and performance
-                        , Cross-platform UI principles</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="portfolio">
-            <div class="container">
-                <h1 class="sub-title"> My Work</h1>
-                <div class="work-list">
-                    <div class="work" role="button" tabindex="0" data-title="Guess Game" data-desc="A simple JavaScript number-guessing game demo.">
-                        <img src="img/6.png" alt="Guess game screenshot">
-                        <div class="layer">
-                            <h3>Guess Game</h3>
-                            <p>A simple JavaScript number-guessing game demo.</p>
-                            <a class="project-link" href="https://gyankaur01.github.io/guess-game/" target="_blank" rel="noopener noreferrer">Open demo</a>
-                        </div>
-                    </div>
-                    <div class="work" role="button" tabindex="0" data-title="Pig Game" data-desc="A fun pig dice game built with JavaScript.">
-                        <img src="img/5.png" alt="Pig game screenshot">
-                        <div class="layer">
-                            <h3>Pig Game</h3>
-                            <p>A fun pig dice game built with JavaScript.</p>
-                            <a class="project-link" href="https://gyankaur01.github.io/pig-game/" target="_blank" rel="noopener noreferrer">Open demo</a>
-                        </div>
-                    </div>
-                    <div class="work" role="button" tabindex="0" data-title="AI App" data-desc="Smart assistant app that helps with daily tasks.">
-                        <img src="img/3.jpg" alt="AI app screenshot">
-                        <div class="layer">
-                            <h3>AI App</h3>
-                            <p>Smart assistant app that helps with daily tasks.</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="btn">See more</a>
-            </div>
-        </div>
+	<head>
+		<title>portfolio</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.0/devicon.min.css">
+	</head>
+	<script src="https://kit.fontawesome.com/c425e24a8.js" crossorigin="anonymous"></script>
+	<body>
+		<div id="header">
+			<div class="container">
+				<div class="top-info">I'm a Web Developer & Data Analyst — Available for freelance. <a href="#contact" class="cta">Hire me</a></div>
+				<nav>
+					<h1 class="brand"><span>G</span>yan</h1>
+					<button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light and dark mode">
+						<i class="fas fa-moon"></i>
+						<span class="sr-only">Toggle theme</span>
+					</button>
+					<button class="nav-toggle" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<ul class="nav-links">
+						<li><a href="#header">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#services">Service</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+				<div class="header-text">
+					<h1>Hi, <br>I'm <span>Gyan kaur</span></h1>
+					<p class="lead">I build responsive websites and analyze data to deliver actionable insights.</p>
+					<a href="#contact" class="btn cta-btn">Get in touch</a>
+				</div>
+			</div>
+		</div>
+		<div id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-1">
+						<img src="img/0.jpg" alt="Portrait of Gyan">
+					</div>
+					<div class="col-2">
+						<h1 class="sub-title">About me</h1>
+						<p>I am a passionate and detail-oriented aspiring Web Developer 
+							and Data Analyst with a strong foundation in HTML, CSS, JavaScript, Python, React,
+							and data visualization tools. I enjoy building responsive, user-friendly applications and 
+							transforming data into meaningful insights.</p>
+						<div class="titles">
+							<p class="links active-link" onclick="opentab('skills', this)">Skills</p>
+							<p class="links" onclick="opentab('education', this)">Education</p>
+						</div>
+						<div class="content active-tab" id="skills">
+							<h4>Frontend</h4>
+							<div class="tech-icons">
+								<i class="devicon-html5-plain colored" title="HTML5"></i>
+								<i class="devicon-css3-plain colored" title="CSS3"></i>
+								<i class="devicon-javascript-plain colored" title="JavaScript"></i>
+								<i class="devicon-react-original colored" title="React"></i>
+							</div>
+							<h4>Data</h4>
+							<div class="tech-icons">
+								<i class="devicon-python-plain colored" title="Python"></i>
+								<i class="devicon-pandas-plain colored" title="Pandas"></i>
+								<i class="devicon-numpy-original colored" title="NumPy"></i>
+								<i class="devicon-matplotlib-plain colored" title="Matplotlib"></i>
+							</div>
+							<!-- Live skill bars -->
+							<div class="skill-bar">
+								<span>Python</span>
+								<div class="bar"><div class="progress python" style="width:78%"></div></div>
+							</div>
+							<div class="skill-bar">
+								<span>JavaScript</span>
+								<div class="bar"><div class="progress js" style="width:82%"></div></div>
+							</div>
+							<div class="skill-bar">
+								<span>React</span>
+								<div class="bar"><div class="progress react" style="width:70%"></div></div>
+							</div>
+						</div>
+						<div class="content" id="education">
+							<ul>
+								<li><span>Bachelor</span><br>BCA (AI) — Hisar</li>
+								<li><span>12th (Commerce)</span><br>Senior Secondary — Commerce — Hisar</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="services">
+			<div class="container">
+				<h1 class="sub-title">My Services </h1>
+				<div class="services-list">
+					<div>
+						<i class="fas fa-code"></i>
+						<h2>Web Designing</h2>
+						<p>Website Design & Development
+						, Responsive and modern websites using HTML, CSS, and JavaScript
+						, Mobile-friendly layouts with Flexbox and Grid
+						, Clean, user-focused UI design</p>
+						<a href="#">Learn More</a>
+					</div>
+					<div>
+						<i class="fas fa-crop-alt"></i>
+						<h2>UI/UX Design</h2>
+						<p>Clean, modern, and visually appealing interface designs
+						, Responsive layouts for desktop, tablet, and mobile devices
+						, Consistent color schemes, typography, and design systems
+						, Dark mode and accessibility-friendly designs</p>
+						<a href="#">Learn More</a>
+					</div>
+					<div>
+						<i class="fas fa-app-store"></i>
+						<h2>App Design</h2>
+						<p>Front-End App Development
+						, User-friendly and responsive app interfaces
+						, Clean layouts focused on usability and performance
+						, Cross-platform UI principles</p>
+						<a href="#">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="portfolio">
+			<div class="container">
+				<h1 class="sub-title"> My Work</h1>
+				<div class="work-list">
+					<div class="work glass" role="button" tabindex="0" data-title="Guess Game" data-desc="A simple JavaScript number-guessing game demo." data-image="img/6.png" data-demo="https://gyankaur01.github.io/guess-game/" data-repo="https://github.com/gyankaur01/guess-game">
+						<img src="img/6.png" alt="Guess game screenshot">
+						<div class="layer">
+							<h3>Guess Game</h3>
+							<p>A JavaScript number-guessing game with responsive UI.</p>
+							<div class="work-links">
+								<a href="https://gyankaur01.github.io/guess-game/" target="_blank" rel="noopener noreferrer" title="Open demo"><i class="fa-solid fa-up-right-from-square"></i></a>
+								<a href="https://github.com/gyankaur01/guess-game" target="_blank" rel="noopener noreferrer" title="View code"><i class="fa-brands fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="work glass" role="button" tabindex="0" data-title="Pig Game" data-desc="A fun pig dice game built with JavaScript." data-image="img/5.png" data-demo="https://gyankaur01.github.io/pig-game/" data-repo="https://github.com/gyankaur01/pig-game">
+						<img src="img/5.png" alt="Pig game screenshot">
+						<div class="layer">
+							<h3>Pig Game</h3>
+							<p>Turn-based dice game built with vanilla JS.</p>
+							<div class="work-links">
+								<a href="https://gyankaur01.github.io/pig-game/" target="_blank" rel="noopener noreferrer" title="Open demo"><i class="fa-solid fa-up-right-from-square"></i></a>
+								<a href="https://github.com/gyankaur01/pig-game" target="_blank" rel="noopener noreferrer" title="View code"><i class="fa-brands fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="work glass" role="button" tabindex="0" data-title="AI App" data-desc="Smart assistant app that helps with daily tasks." data-image="img/3.jpg" data-video="img/ai-demo.mp4" data-repo="#">
+						<img src="img/3.jpg" alt="AI app screenshot">
+						<div class="layer">
+							<h3>AI App</h3>
+							<p>Assistant demo with basic NLP and task automation.</p>
+							<div class="work-links">
+								<button class="btn view-details" type="button">Details</button>
+								<a href="#" target="_blank" rel="noopener noreferrer" title="View code"><i class="fa-brands fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="btn">See more</a>
+			</div>
+		</div>
 
-        <div id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="contact-left">
-                        <h1 class="sub-title">Contact Me</h1>
-                        <p>saggugyan0@gmail.com</p>
-                        <p>0123456789</p>
-                        <div class="social-icons" aria-label="social links">
-                            <a href="https://www.facebook.com/zuck."><img src="img/fb.png" alt="Facebook"></a>
-                            <a href="https://www.linkedin.com/in/gyan-kaur-952818319"><img src="img/lin.avif" alt="LinkedIn"></a>
-                            <a href="https://wa.me/<number>"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-                            <a href="https://www.instagram.com/gyan.saggu13"><img src="img/insta.png" alt="Instagram"></a>
-                        </div>
-                        <a href="" download class="btn btn2">Download Cv</a>
-                    </div>
-                    <div class="contact-right">
-                        <form name="submit-to-google-sheet">
-                            <input type="text" name="Name" placeholder="Your name">
-                            <input type="email" name="email" placeholder="Your email">
-                            <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                            <button type="submit" class="btn btn2">Submit</button>
-                        </form>
-                        <span id="msg"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © Gyan kaur</p>
-        </div>
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="contact-left">
+						<h1 class="sub-title">Contact Me</h1>
+						<p>saggugyan0@gmail.com</p>
+						<p>0123456789</p>
+						<div class="social-icons" aria-label="social links">
+							<a href="https://www.facebook.com/zuck."><img src="img/fb.png" alt="Facebook"></a>
+							<a href="https://www.linkedin.com/in/gyan-kaur-952818319"><img src="img/lin.avif" alt="LinkedIn"></a>
+							<a href="https://wa.me/<number>"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+							<a href="https://www.instagram.com/gyan.saggu13"><img src="img/insta.png" alt="Instagram"></a>
+						</div>
+						<a href="" download class="btn btn2">Download Cv</a>
+					</div>
+					<div class="contact-right">
+						<form name="submit-to-google-sheet">
+							<input type="text" name="Name" placeholder="Your name">
+							<input type="email" name="email" placeholder="Your email">
+							<textarea name="Message" rows="6" placeholder="Your message"></textarea>
+							<button type="submit" class="btn btn2">Submit</button>
+						</form>
+						<span id="msg"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>Copyright © Gyan kaur</p>
+		</div>
 
-        <!-- Lightbox / modal for portfolio -->
-        <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-            <button class="lb-close" aria-label="Close">×</button>
-            <div class="lb-content">
-                <img src="" alt="" class="lb-image">
-                <div class="lb-info">
-                    <h3 class="lb-title"></h3>
-                    <p class="lb-desc"></p>
-                </div>
-            </div>
-        </div>
-        <script src="main.js" defer></script>
-    </body>
+		<!-- Lightbox / modal for portfolio -->
+		<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+			<button class="lb-close" aria-label="Close">×</button>
+			<div class="lb-content">
+				<img src="" alt="" class="lb-image">
+				<div class="lb-info">
+					<h3 class="lb-title"></h3>
+					<p class="lb-desc"></p>
+				</div>
+			</div>
+		</div>
+		<script src="main.js" defer></script>
+	</body>
 </html>

@@ -4,6 +4,11 @@
     --muted:#9aa6b2;
     --accent:#00b894; /* teal accent */
     --text:#e6eef6;
+	--card: rgba(255,255,255,0.04);
+	--glass-bg: rgba(255,255,255,0.06);
+	--glass-border: rgba(255,255,255,0.12);
+	--accent: #ff004f;
+	--muted: #9fb0c8;
 }
 
 /* Light theme overrides */
@@ -61,7 +66,14 @@ body{
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     line-height: 1.5;
     -webkit-font-smoothing:antialiased;
+    transition: background-color 260ms ease, color 260ms ease;
 }
+
+/* ensure surfaces transition too */
+.surface, .top-info, .services-list div, .work, .lb-content {
+    transition: background-color 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
 /* layout container */
 .container{
     max-width: 1200px;
@@ -316,9 +328,12 @@ nav ul li a:hover::after{
     -webkit-overflow-scrolling: touch;
 }
 .work{
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    transition: transform 200ms ease, box-shadow 200ms ease;
 }
 .work{ cursor:pointer }
 .work{
@@ -345,21 +360,14 @@ nav ul li a:hover::after{
     .work img{ height:200px }
 }
 .layer{
-    width:100%;
-    height: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.6) 20%, var(--accent));
-    border-radius: 10px;
     position: absolute;
-    left:0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 24px;
-    text-align: center;
-    font-size: 14px;
+    inset: 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:16px;
+    color:#fff;
+    background: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.12));
     transition: height 0.45s ease, background 0.3s;
 }
 .layer h3{
@@ -379,7 +387,8 @@ nav ul li a:hover::after{
 }
 .project-link:hover{ background: var(--accent); border-color: var(--accent); color: var(--text) }
 .work:hover{
-    transform: scale(1.03);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 .work:hover .layer{
     height: 100%;
@@ -482,7 +491,62 @@ form .btn2{
     display: block;
 }
 
-/* Lightbox styles */
+/* Glassmorphism card */
+.glass{
+	background: var(--glass-bg);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid var(--glass-border);
+	border-radius: 12px;
+	transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+	overflow: hidden;
+}
+.glass:hover{
+	transform: translateY(-8px);
+	box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+	border-color: var(--accent);
+}
+
+/* project links/icons inside card */
+.work .work-links{display:flex;gap:10px;margin-top:8px;align-items:center}
+.work .work-links a{color:#fff;font-size:1.05rem;opacity:0.95}
+.work .work-links a:hover{color:var(--accent)}
+
+/* Buttons */
+.btn{
+	display:inline-block;padding:10px 18px;border-radius:999px;border:2px solid var(--accent);background:transparent;color:#fff;text-decoration:none;font-weight:600;cursor:pointer;
+}
+.btn:hover{background:var(--accent);box-shadow:0 6px 20px rgba(255,0,79,0.12)}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:all 0.8s cubic-bezier(.2,.9,.2,1)}
+.reveal.active{opacity:1;transform:none}
+
+/* Tech icons */
+.tech-icons{display:flex;gap:12px;align-items:center;margin:8px 0}
+.tech-icons i{font-size:28px;opacity:0.95;color:#fff}
+
+/* Skill bars */
+.skill-bar{margin:10px 0}
+.skill-bar span{display:block;font-size:0.95rem;color:var(--muted);margin-bottom:6px}
+.bar{background:rgba(255,255,255,0.04);height:10px;border-radius:8px;overflow:hidden}
+.progress{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--accent),#ff7aa2);transition:width:700ms ease}
+
+/* Cursor glow (optional) */
+.cursor-glow{
+	pointer-events:none;
+	position:fixed;
+	width:220px;height:220px;border-radius:50%;
+	background:radial-gradient(circle, rgba(255,0,79,0.12) 0%, rgba(255,0,79,0.04) 30%, transparent 60%);
+	transform:translate(-50%,-50%);
+	mix-blend-mode:screen;opacity:0.9;z-index:999;
+	pointer-events:none;
+}
+
+/* ensure modal/lightbox remains visible on glass backgrounds */
+.lightbox .lb-content{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+
+/* ...existing code... */
 .lightbox{ position: fixed; inset:0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.75); z-index:9999; opacity:0; pointer-events:none; transition: opacity 0.25s ease }
 .lightbox[aria-hidden="false"]{ opacity:1; pointer-events:auto }
 .lb-content{ max-width:940px; width:90%; display:flex; gap:20px; align-items:flex-start; }
@@ -492,25 +556,114 @@ form .btn2{
 .lb-desc{ color:var(--muted) }
 .lb-close{ position:absolute; top:20px; right:20px; background:transparent; border:0; color:var(--text); font-size:32px; cursor:pointer }
 
-/* subtle layer hover style */
-.work .layer{ transform: translateY(8px); transition: transform 0.35s }
-.work:hover .layer{ transform: translateY(0) }
-
-/* smaller screens: stack portfolio */
-@media screen and (max-width:999px){
-    .work-list{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .lb-content{ flex-direction:column }
-    .lb-image{ width:100% }
-    .lb-info{ width:100% }
+/* Glassmorphism for project cards */
+.work {
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background: rgba(255,255,255,0.06);
+	backdrop-filter: blur(8px);
+	transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.work:hover {
+	transform: translateY(-6px) scale(1.02);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Accessibility: visible focus outlines for keyboard users */
-a:focus, button:focus, .nav-toggle:focus, .project-link:focus, .btn:focus, input:focus, textarea:focus{
-    outline: 3px solid rgba(0,0,0,0.12);
-    outline-offset: 3px;
+/* project layer */
+.layer {
+	position: absolute;
+	inset: 0;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	padding:16px;
+	color:#fff;
+	background: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.12));
 }
 
-:focus-visible{
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
+/* actions */
+.project-actions {
+	display:flex;
+	gap:8px;
+	margin-top:8px;
+}
+.project-actions .btn, .project-actions .project-link {
+	background:rgba(255,255,255,0.08);
+	color:#fff;
+	padding:6px 10px;
+	border-radius:6px;
+	text-decoration:none;
+	font-size:0.9rem;
+}
+
+/* Tech icons */
+.tech-icons {
+	display:flex;
+	gap:12px;
+	align-items:center;
+	margin-bottom:12px;
+}
+.devicon-html5-plain, .devicon-css3-plain, .devicon-javascript-plain, .devicon-react-original, .devicon-python-plain, .devicon-pandas-plain, .devicon-numpy-original, .devicon-matplotlib-plain {
+	font-size:34px;
+	opacity:0.95;
+}
+
+/* Chart wrapper */
+.chart-wrap {
+	margin-top:14px;
+	max-width:360px;
+	background: rgba(255,255,255,0.03);
+	padding:10px;
+	border-radius:8px;
+	backdrop-filter: blur(4px);
+}
+
+/* Lightbox / modal */
+.lightbox {
+	position:fixed;
+	inset:0;
+	display:none;
+	place-items:center;
+	background:rgba(0,0,0,0.6);
+	z-index:1200;
+}
+.lightbox[aria-hidden="false"] { display:grid; }
+.lb-content {
+	background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+	padding:18px;
+	border-radius:12px;
+	max-width:880px;
+	width:95%;
+	display:grid;
+	grid-template-columns: 1fr 360px;
+	gap:12px;
+}
+.lb-image, .lb-video {
+	width:100%;
+	height:auto;
+	border-radius:8px;
+}
+.lb-info { color:#fff; }
+.lb-actions { margin-top:12px; display:flex; gap:8px; }
+
+/* Cursor follower */
+.cursor-follower {
+	position:fixed;
+	width:36px;
+	height:36px;
+	border-radius:50%;
+	pointer-events:none;
+	transform:translate(-50%,-50%);
+	mix-blend-mode: difference;
+	transition: transform 120ms linear;
+	background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.15));
+	z-index:9999;
+	opacity:0.6;
+}
+
+/* Responsive tweaks */
+@media (max-width:900px) {
+	.lb-content { grid-template-columns: 1fr; }
+	.chart-wrap { max-width:100%; }
 }
